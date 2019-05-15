@@ -1,21 +1,21 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter, Switch, Link } from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/dashboard";
-import SignUp from "./components/auth/SignUp";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
+class App extends Component {
+  render() {
+    return (
       <BrowserRouter>
-        <Switch>
-          <Link to={{ pathname: "/dashboard" }} component={Dashboard} />
-          <Link to={{ pathname: "" }} component={SignUp} />
-        </Switch>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route path="/" component={Dashboard} />
+          </Switch>
+        </div>
       </BrowserRouter>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
