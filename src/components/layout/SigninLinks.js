@@ -4,7 +4,7 @@ import Notifications from "../dashboard/Notifications";
 const SigninLinks = () => {
   return (
     <div>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li>
           <NavLink to="/beDonor">Donate Blood</NavLink>
         </li>
