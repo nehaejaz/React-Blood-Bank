@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div>
       <nav>
-        <div class="nav-wrapper">
+        <div className="nav-wrapper">
           <Link to="/" className="brand-logo">
             Blood Bank
           </Link>
