@@ -1,6 +1,5 @@
 import React from "react";
 import DonorSummary from "./DonorSummary";
-import Header from "./Header";
 import { Col, Row, Card } from "react-materialize";
 
 const ListingDonor = () => {
