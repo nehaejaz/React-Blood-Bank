@@ -1,6 +1,5 @@
 import React from "react";
-import { M } from "materialize-css";
-import { Dropdown, Icon, Button } from "react-materialize";
+import { Dropdown, Button } from "react-materialize";
 const Notifications = () => {
   return (
     <div className="Notifications">
