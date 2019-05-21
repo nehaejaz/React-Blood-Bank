@@ -1,0 +1,10 @@
+.SignUp{
+    width: 100%;
+    height: 100vh;
+    background: url(../../img/hands.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.signup-card{
+    opacity: 0.8;
+    margin-top: 6%;
+}
