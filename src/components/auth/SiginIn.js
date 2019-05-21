@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Card, Button } from "react-materialize";
+import "./signin.css";
 
 class SignIn extends Component {
   state = {
@@ -22,7 +23,7 @@ class SignIn extends Component {
           <Row>
             <Col className="offset-m6" m={6} s={12}>
               <Card
-                className="blue-grey darken-1"
+                className="red lighten-2 signin-card"
                 textClassName="white-text"
                 title="Sign In"
               >
