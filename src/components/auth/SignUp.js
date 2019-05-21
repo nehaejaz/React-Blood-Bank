@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Card, Button } from "react-materialize";
+import "./signup.css";
 
 class SignUp extends Component {
   state = {
@@ -27,9 +28,9 @@ class SignUp extends Component {
       <div className="SignUp center">
         <form onSubmit={this.SubmitHandler}>
           <Row>
-            <Col className="offset-m6" m={6} s={12}>
+            <Col className="offset-m3" m={6} s={12}>
               <Card
-                className="blue-grey darken-1"
+                className="red lighten-2 signup-card"
                 textClassName="white-text"
                 title="Sign Up"
               >
@@ -69,7 +70,9 @@ class SignUp extends Component {
                     </div>
                   </div>
                 </div>
-                <Button type="submit">Submit</Button>
+                <Button className="center" type="submit">
+                  Submit
+                </Button>
               </Card>
             </Col>
           </Row>
