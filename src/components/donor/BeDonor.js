@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Card, Button } from "react-materialize";
+import "./css/bedonor.css";
 
 class BeDonor extends Component {
   state = {
@@ -17,12 +18,12 @@ class BeDonor extends Component {
   };
   render() {
     return (
-      <div className="SignIn center">
+      <div className="Bedonor center">
         <form onSubmit={this.SubmitHandler}>
           <Row className="center">
-            <Col className="" m={6} s={12}>
+            <Col className="offset-m3" m={6} s={12}>
               <Card
-                className="blue-grey darken-1"
+                className="red lighten-2 bedonor-card"
                 textClassName="white-text"
                 title="Become a Donor"
               >
