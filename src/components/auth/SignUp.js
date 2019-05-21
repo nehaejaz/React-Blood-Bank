@@ -17,9 +17,10 @@ class SignUp extends Component {
   SubmitHandler = e => {
     e.preventDefault();
     const { password, retypepassword } = this.state;
-    if (password !== retypepassword) {
-      console.log("password not match");
-    } else console.log(this.state);
+
+    password === retypepassword
+      ? console.log("match")
+      : console.log("no match");
   };
   render() {
     return (
