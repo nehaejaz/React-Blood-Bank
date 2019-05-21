@@ -1,0 +1,11 @@
+.Bedonor{
+    width: 100%;
+    height: 100vh;
+    background: url(../../../img/charity.jpg) no-repeat center center fixed;
+    background-size: cover
+}
+
+.bedonor-card{
+    opacity: 0.8;
+    margin-top: 5%;
+}
