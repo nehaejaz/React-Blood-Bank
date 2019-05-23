@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col, Card, Button } from "react-materialize";
 import "./css/bedonor.css";
-
+import { connect } from "react-redux";
+import { donorAction } from "../../store/actions/donorActions";
 class BeDonor extends Component {
   state = {
     email: "",
@@ -14,7 +15,7 @@ class BeDonor extends Component {
   };
   SubmitHandler = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.registerDonor(this.state);
   };
   render() {
     return (
@@ -48,4 +49,13 @@ class BeDonor extends Component {
     );
   }
 }
-export default BeDonor;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    registerDonor: donor => dispatch(donorAction(donor))
+  };
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(BeDonor);
