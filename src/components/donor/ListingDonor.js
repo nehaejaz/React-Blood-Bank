@@ -2,7 +2,7 @@ import React from "react";
 import DonorSummary from "./DonorSummary";
 import { Col, Row, Card } from "react-materialize";
 
-const ListingDonor = () => {
+const ListingDonor = ({ donors }) => {
   return (
     <div className="ListingDonor">
       <Row>
@@ -26,8 +26,10 @@ const ListingDonor = () => {
                 Details
               </Col>
             </Row>
-            <DonorSummary />
-            <DonorSummary />
+            {donors &&
+              donors.map(donors => {
+                return <DonorSummary donors={donors} key={donors.id} />;
+              })}
           </Card>
         </Col>
       </Row>
