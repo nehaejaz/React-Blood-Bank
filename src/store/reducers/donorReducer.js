@@ -10,9 +10,11 @@ const donorReducer = (state = initState, action) => {
   switch (action.type) {
     case "RegisteredDonor":
       console.log("Donor has been registered");
-      break;
+      return state;
+    case "Error_RegisterDonor":
+      console.log("Error in registering Donor", action.err);
     default:
-      console.log("default");
+      return state;
   }
   return state;
 };
