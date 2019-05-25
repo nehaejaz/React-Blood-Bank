@@ -11,11 +11,13 @@ const BeDonor = props => (
       initialValues={{
         FirstName: "",
         LastName: "",
+        Gender: null,
         Age: "",
         BloodGroup: "",
         Contact: "",
         City: "",
-        Country: ""
+        Country: "",
+        myRadioGroup: ""
       }}
       validate={values => {
         let errors = {};
@@ -31,49 +33,76 @@ const BeDonor = props => (
       onSubmit={(values, { setSubmitting }) => {
         // setTimeout(() => {
         // alert(JSON.stringify(values, null, 2));
-        props.RegistereDonor(values);
+        // props.RegistereDonor(values);
+        console.log(values);
         setSubmitting(false);
         // }, 400);
       }}
     >
-      {({ isSubmitting }) => (
-        <Form>
-          <Row className="center">
-            <Col className="offset-m2" m={8} s={12}>
-              <Card
-                className="red lighten-2 bedonor-card"
-                textClassName="white-text"
-                title="Become a Donor"
-              >
-                <div className="row">
-                  <div className="input-field col s6">
-                    <i className="material-icons prefix">contact_mail</i>
-                    <Field
-                      type="text"
-                      name="FirstName"
-                      placeholder="FirstName"
-                    />
-                    <ErrorMessage name="FirstName" component="div" />
+      {({ isSubmitting, values, handleChange }) =>
+        console.log(values) || (
+          <Form>
+            <Row className="">
+              <Col className="offset-m2" m={8} s={12}>
+                <Card
+                  className="red lighten-2 bedonor-card"
+                  textClassName="white-text"
+                  title="Become a Donor"
+                >
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <i className="material-icons prefix">contact_mail</i>
+                      <Field
+                        type="text"
+                        name="FirstName"
+                        placeholder="FirstName"
+                      />
+                      <ErrorMessage name="FirstName" component="div" />
+                    </div>
+                    <div className="input-field col s6">
+                      <i className="material-icons prefix">contact_mail</i>
+                      <Field
+                        type="text"
+                        name="LastName"
+                        placeholder="LastName"
+                      />
+                      <ErrorMessage name="LastName" component="div" />
+                    </div>
                   </div>
-                  <div className="input-field col s6">
-                    <i className="material-icons prefix">contact_mail</i>
-                    <Field type="text" name="LastName" placeholder="LastName" />
-                    <ErrorMessage name="LastName" component="div" />
+                  <div>
+                    <h5>Gender</h5>
+                    <p>
+                      <label>
+                        <input
+                          className="with-gap"
+                          name="Gender"
+                          type="radio"
+                          onClick={e => (values.Gender = "female")}
+                        />
+                        <span className="white-text">Female</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input
+                          className="with-gap"
+                          name="Gender"
+                          type="radio"
+                          onClick={e => (values.Gender = "male")}
+                        />
+                        <span className="white-text">Male</span>
+                      </label>
+                    </p>
                   </div>
-                </div>
-                {/* <button type="submit" disabled={isSubmitting}>
-                  Submit
-                </button> */}
-                <Button type="submit" disabled={isSubmitting}>
-                  Register
-                </Button>
-              </Card>
-            </Col>
-          </Row>
-          {/* <Field type="password" name="password" />
-          <ErrorMessage name="password" component="div" /> */}
-        </Form>
-      )}
+                  <Button type="submit" disabled={isSubmitting}>
+                    Register
+                  </Button>
+                </Card>
+              </Col>
+            </Row>
+          </Form>
+        )
+      }
     </Formik>
   </div>
 );
