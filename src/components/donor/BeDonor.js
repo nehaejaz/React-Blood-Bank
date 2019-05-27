@@ -2,7 +2,15 @@ import React from "react";
 import "./css/bedonor.css";
 import { donorActions } from "../../store/actions/donorActions";
 import { connect } from "react-redux";
-import { Card, Col, Row, Button } from "react-materialize";
+import {
+  Card,
+  Col,
+  Row,
+  Button,
+  Select,
+  DatePicker,
+  TextInput
+} from "react-materialize";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const BeDonor = props => (
@@ -93,6 +101,35 @@ const BeDonor = props => (
                         <span className="white-text">Male</span>
                       </label>
                     </p>
+                  </div>
+                  <div className="row white-text">
+                    <h5>BloodGroup</h5>
+                    <Select
+                      className="white-text"
+                      value=""
+                      icon="invert_colors"
+                    >
+                      <option className="white-text" value="" disabled>
+                        Choose your option
+                      </option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                    </Select>
+                  </div>
+                  <div className="row">
+                    <DatePicker
+                      className="blue-text"
+                      placeholder="BirthDate"
+                      icon="cake"
+                    />
+                  </div>
+                  <div className="row">
+                    <TextInput
+                      label="Contact number"
+                      data-length={11}
+                      icon="contact_phone"
+                    />
                   </div>
                   <Button type="submit" disabled={isSubmitting}>
                     Register
